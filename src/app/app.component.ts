@@ -76,7 +76,7 @@ export class AppComponent implements OnInit {
       this.articulo= new Electronico(32, 'descripcion12', 'E', 'Titulo 2');
     }
 
-    console.log(this.articulo.calcularDescuento());
+    //console.log(this.articulo.calcularDescuento());
 
 
 

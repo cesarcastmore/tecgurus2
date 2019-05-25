@@ -1,14 +1,7 @@
-<accordion [isAnimated]="true">
-  <accordion-group heading="Static Header">
-    This content is straight in the template.
-  </accordion-group>
-  <accordion-group heading="Another group">
-    <p>Some content</p>
-  </accordion-group>
-  <accordion-group heading="Another group">
-    <p>Some content</p>
-  </accordion-group>
-  <accordion-group heading="Another group">
-    <p>Some content</p>
-  </accordion-group>
-</accordion>
+{{contador}}<div class="row">
+  <div class="card text-center">
+    <app-header [titulo]="articulo.titulo"></app-header>
+    <app-body [price]="articulo.precio" [description]="articulo.descripcion"></app-body>
+    <app-footer (onSum)="contador=$event"></app-footer>
+  </div>
+</div>
