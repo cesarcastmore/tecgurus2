@@ -1,11 +1,13 @@
-<div class="container">
-  <div class="card-body">
-    <h5 class="card-title">{{ description}}</h5>
-    <p class="card-text">{{ price + 1 }}</p>
-    <p *ngIf="price > 1000">
-      Aplica meses sin intereses
-    </p>
-    <!--<accordion [isAnimated]="true">
+<div class="card-body" [ngStyle]="{'background-color':'green'}" [style.color]="getColor('mexico')">
+  <h5 class="card-title">{{ description}}</h5>
+  <p class="card-text">{{ price + 1 | number:'3.1-2' }}</p>
+  <p *ngIf="price > 1000">
+    Aplica meses sin intereses</p>
+  <ng-container [ngSwitch]="categoria">
+    <p *ngSwitchCase="'E'"> Electonico</p>
+    <p *ngSwitchCase="'A'"> Abarrotes</p>
+  </ng-container>
+  <!--<accordion [isAnimated]="true">
     <accordion-group heading="Static Header">
       This content is straight in the template.
     </accordion-group>
@@ -19,6 +21,5 @@
       <p>Some content</p>
     </accordion-group>
   </accordion>!-->
-    <input [value]="name" type="text">
-  </div>
+  <input [value]="name" type="text">
 </div>

@@ -9,12 +9,21 @@ export class BodyComponent implements OnInit {
 
   @Input() price: number;
   @Input() description: string;
+  @Input() categoria: string;
 
   name: string = 'cesar';
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+        console.log("ngOnInit body");
+
+  }
+
+
+  getColor(attr: string){
+  	return 'yellow';
+  }
 
 
 

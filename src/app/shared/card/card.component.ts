@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import {
   Articulo,
   Electronico,
@@ -10,7 +10,7 @@ import {
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
+export class CardComponent implements OnInit, AfterViewInit {
 
   @Input() articulo: Articulo;
   contadorPadre: number=10;
@@ -18,6 +18,11 @@ export class CardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    
+  }
+
+  ngAfterViewInit(){
+    console.log("todos mis hijos renderizaron")
   }
 
 }

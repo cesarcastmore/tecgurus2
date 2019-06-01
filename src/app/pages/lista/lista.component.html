@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-md-3" *ngFor="let articulo of articulos">
+   <div class="col-md-3" *ngFor="let articulo of articulos$ | async | filtros: 10">
+ <!-- <div class="col-md-3" *ngFor="let articulo of articulos2">!-->
     <app-card [articulo]="articulo"></app-card>
     <!-- aqui si existe el articulo!-->
   </div>

@@ -9,8 +9,15 @@ export class HeaderComponent implements OnInit {
 
   @Input('titulo') title: string;
 
+  config_Mayucylas: any = {
+  	mayusculas: true
+  }
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log("ngOnInit header");
+
+  }
 
 }

@@ -1,8 +1,9 @@
 {{contadorPadre}}<div class="row">
-  <div class="card text-center">
+  <div class="card text-center" [ngClass]="{'border-red': contadorPadre > 20, 'border-blue': contadorPadre > 30,
+  'border-green': contadorPadre > 40  }  ">
     <app-header [titulo]="articulo.titulo"></app-header>
-    <app-body [price]="articulo.precio" [description]="articulo.descripcion"></app-body>
-    <app-footer [contador]="contadorPadre" (contadorChange)="contadorPadre=$event"></app-footer>
+    <app-body [price]="articulo.precio" [description]="articulo.descripcion" [categoria]="articulo.categoria"></app-body>
+    <app-footer [contador]="contadorPadre" (contadorChange)="contadorPadre=$event" *ngIf="contadorPadre < 23"></app-footer>
     <!--<app-footer [(contador)]="contadorPadre"></app-footer>!-->
   </div>
 </div>
