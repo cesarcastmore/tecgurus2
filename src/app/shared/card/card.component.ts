@@ -13,7 +13,7 @@ import {
 export class CardComponent implements OnInit {
 
   articulo: Articulo;
-  contador: number=0;
+  contadorPadre: number=10;
 
   constructor() {}
 

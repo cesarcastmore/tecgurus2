@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -7,9 +7,10 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  contador: number = 0;
+  @Input() contador: number;
 
-  @Output() onSum: EventEmitter < number > = new EventEmitter < number > ();
+
+  @Output() contadorChange: EventEmitter < number > = new EventEmitter < number > ();
 
 
   constructor() {}
@@ -19,7 +20,7 @@ export class FooterComponent implements OnInit {
   onClick() {
     this.contador += 1;
     console.log("entro");
-    this.onSum.emit(this.contador);
+    this.contadorChange.emit(this.contador);
   }
 
 }
