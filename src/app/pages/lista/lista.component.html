@@ -1,1 +1,7 @@
-<app-card></app-card>
+<div class="row">
+  <div class="col-md-3" *ngFor="let articulo of articulos">
+    <app-card [articulo]="articulo"></app-card>
+    <!-- aqui si existe el articulo!-->
+  </div>
+  <!-- aqui no existe el articulo!-->
+</div>

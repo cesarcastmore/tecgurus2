@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {
   Articulo,
   Electronico,
@@ -12,14 +12,12 @@ import {
 })
 export class CardComponent implements OnInit {
 
-  articulo: Articulo;
+  @Input() articulo: Articulo;
   contadorPadre: number=10;
 
   constructor() {}
 
   ngOnInit() {
-    this.articulo = new Electronico(32, 'descripcion12', 'E', 'Titulo 2');
-
   }
 
 }

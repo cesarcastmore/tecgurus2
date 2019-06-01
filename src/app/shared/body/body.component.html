@@ -1,7 +1,11 @@
-<div class="card-body">
-  <h5 class="card-title">{{ description}}</h5>
-  <p class="card-text">{{ price + 1 }}</p>
-  <accordion [isAnimated]="true">
+<div class="container">
+  <div class="card-body">
+    <h5 class="card-title">{{ description}}</h5>
+    <p class="card-text">{{ price + 1 }}</p>
+    <p *ngIf="price > 1000">
+      Aplica meses sin intereses
+    </p>
+    <!--<accordion [isAnimated]="true">
     <accordion-group heading="Static Header">
       This content is straight in the template.
     </accordion-group>
@@ -14,6 +18,7 @@
     <accordion-group heading="Another group">
       <p>Some content</p>
     </accordion-group>
-  </accordion>
-  <input [value]="name" type="text">
+  </accordion>!-->
+    <input [value]="name" type="text">
+  </div>
 </div>
