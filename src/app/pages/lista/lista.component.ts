@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Articulo, Electronico } from '../../model'
 import { Observable } from 'rxjs';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import {FormGroup, FormControl, Validators } from '@angular/forms';
 
 
 @Component({
@@ -14,9 +16,23 @@ export class ListaComponent implements OnInit {
   articulos$: Observable < any[] > ;
 
   articulos2: Articulo[] = [];
+    modalRef: BsModalRef;
 
-  constructor() {
+    public formArticulo: FormGroup= new FormGroup({
+      id: new FormControl(null),
+      titulo: new FormControl( null, [Validators.required]),
+      categoria: new FormControl('E'),
+      precio: new FormControl(0.00),
+      descripcion: new FormControl()
+    });
 
+
+  constructor(private modalService: BsModalService) {
+
+  }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
   }
 
 
@@ -66,13 +82,13 @@ export class ListaComponent implements OnInit {
 
   ngOnInit() {
 
-    this.articulos.push(new Electronico(32.244434, 'descripcion12', 'E', 'Titulo 2'));
+    this.articulos.push(new Electronico(32.244434, 'descripcion12', 'E', 'Titulo 2', 'fgrf5g'));
 
-    this.articulos.push(new Electronico(43.4342343, 'descripcion13', 'A', 'Titulo 3'));
-    this.articulos.push(new Electronico(34, 'descripcion14', 'E', 'Titulo 4'));
-    this.articulos.push(new Electronico(1200.43434, 'descripcion15', 'A', 'Titulo 5'));
-    this.articulos.push(new Electronico(43.2343, 'descripcion16', 'E', 'Titulo 6'));
-    this.articulos.push(new Electronico(2500.234, 'descripcion17', 'A', 'Titulo 7'));
+    this.articulos.push(new Electronico(43.4342343, 'descripcion13', 'A', 'Titulo 3', 'dfgff'));
+    this.articulos.push(new Electronico(34, 'descripcion14', 'E', 'Titulo 4', 'gffrrf'));
+    this.articulos.push(new Electronico(1200.43434, 'descripcion15', 'A', 'Titulo 5', 'dfdfdfg'));
+    this.articulos.push(new Electronico(43.2343, 'descripcion16', 'E', 'Titulo 6', 'fgfg'));
+    this.articulos.push(new Electronico(2500.234, 'descripcion17', 'A', 'Titulo 7', 'dfgfg'));
 
 
     this.articulos$ = this.getObservableList();
@@ -92,5 +108,57 @@ export class ListaComponent implements OnInit {
 
 
   }
+
+
+  public guardar(){
+
+    let item: any= this.formArticulo.value;
+
+    console.log("ERRORS", this.formArticulo.controls['titulo'].errors);
+
+    if(item.id === null){
+
+      if(item.categoria == 'E'){
+        this.articulos.push(new Electronico(item.precio, item.descripcion, item.categoria, item.titulo, this.uuidv4()));
+      }
+    } else {
+
+
+      for(let i=0; i< this.articulos.length; i++){
+        if(item.id == this.articulos[i].id){
+          this.articulos[i] = item;
+        }
+      }
+
+
+
+    }
+
+    this.formArticulo.reset();
+    this.modalRef.hide();
+
+
+
+
+
+
+  }
+
+  public edit(articulo: any, template: TemplateRef<any>){
+    this.modalRef = this.modalService.show(template);
+
+    this.formArticulo.patchValue(articulo);
+
+  }
+
+
+  public uuidv4(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
+
+
 
 }

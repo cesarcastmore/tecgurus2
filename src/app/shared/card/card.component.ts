@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, Output, EventEmitter } from '@angular/core';
 import {
   Articulo,
   Electronico,
@@ -15,6 +15,8 @@ export class CardComponent implements OnInit, AfterViewInit {
   @Input() articulo: Articulo;
   contadorPadre: number=10;
 
+  @Output() onEdit: EventEmitter<Articulo> = new EventEmitter<Articulo>();
+
   constructor() {}
 
   ngOnInit() {
@@ -23,6 +25,11 @@ export class CardComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(){
     console.log("todos mis hijos renderizaron")
+  }
+
+  public edit(event: boolean){
+    this.onEdit.emit(this.articulo);
+
   }
 
 }

@@ -9,6 +9,8 @@ import { ListaComponent } from './pages/lista/lista.component';
 import { Lista2Component } from './pages/lista2/lista2.component';
 import { NavbarComponent } from './pages/lista2/navbar/navbar.component';
 import {AuthService } from './shared/services/auth.service';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import {  ReactiveFormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import {AuthService } from './shared/services/auth.service';
     CardsComponent,
     ListaComponent,
     Lista2Component,
-    NavbarComponent
-  ],
+    NavbarComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    ModalModule.forRoot(),
+        ReactiveFormsModule
+
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

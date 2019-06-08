@@ -3,7 +3,7 @@
   'border-green': contadorPadre > 40  }  ">
     <app-header [titulo]="articulo.titulo"></app-header>
     <app-body [price]="articulo.precio" [description]="articulo.descripcion" [categoria]="articulo.categoria"></app-body>
-    <app-footer [contador]="contadorPadre" (contadorChange)="contadorPadre=$event" *ngIf="contadorPadre < 23"></app-footer>
+    <app-footer [contador]="contadorPadre" (contadorChange)="contadorPadre=$event" *ngIf="contadorPadre < 23" (onEdit)="edit($event)"></app-footer>
     <!--<app-footer [(contador)]="contadorPadre"></app-footer>!-->
   </div>
 </div>

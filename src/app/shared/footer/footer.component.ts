@@ -21,6 +21,7 @@ OnChanges {
 
 
   @Output() contadorChange: EventEmitter < number > = new EventEmitter < number > ();
+  @Output() onEdit: EventEmitter < boolean > = new EventEmitter < boolean > ();
 
 
   constructor() {
@@ -51,6 +52,10 @@ OnChanges {
       console.log("prev", prev);
 
     }
+  }
+
+  public edit(){
+    this.onEdit.emit(true);
   }
 
 }
