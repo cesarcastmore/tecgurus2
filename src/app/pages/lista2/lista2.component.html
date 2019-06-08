@@ -1,0 +1,11 @@
+<app-navbar></app-navbar>
+<div class="row">
+   <div class="col-md-3" *ngFor="let articulo of articulosService.articulos">
+ <!-- <div class="col-md-3" *ngFor="let articulo of articulos2">!-->
+    <app-card [articulo]="articulo"></app-card>
+    <!-- aqui si existe el articulo!-->
+  </div>
+  <!-- aqui no existe el articulo!-->
+</div>
+
+{{ authService.api_key}}

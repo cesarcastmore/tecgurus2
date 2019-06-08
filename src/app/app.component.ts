@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Abarrotes } from './model/abarrotes';
 import { Articulo } from './model/articulo';
 import { Electronico } from './model/electronico';
-
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +13,10 @@ export class AppComponent implements OnInit {
   title = 'tecgurus';
 
   articulo: Articulo;
+
+  constructor(private authService: AuthService){
+
+  }
 
   math: any = {
     sum: ((a: number, b: number) => {
@@ -25,6 +29,9 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.authService.api_key= '23454etrdf45t5erdx';
+    
     let items: any[] = [{
         nombre: 'cesar',
         id: 2,
