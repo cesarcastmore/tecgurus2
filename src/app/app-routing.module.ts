@@ -7,27 +7,35 @@ import { ContactosComponent } from './pages/lista/contactos/contactos.component'
 import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
 
 const routes: Routes = [{
-	path: 'lista_1',
-	component: ListaComponent,
-	children: [{
-		path: 'informacion',
-		component: InformacionComponent
-	}, {
-		path: 'contactos', 
-		component: ContactosComponent
-	}, {
-		path: ':id',
-		component: ArticuloComponent
+  path: 'lista_1',
+  component: ListaComponent,
+  children: [{
+    path: 'informacion',
+    component: InformacionComponent
+  }, {
+    path: 'contactos',
+    component: ContactosComponent
+  }, {
+    path: ':id',
+    component: ArticuloComponent
 
-	}]
+  }],
 }, {
-		path: 'lista_2',
-	component: Lista2Component
+  path: 'lista_2',
+  component: Lista2Component
 
+}, {
+  path: 'inventario',
+  loadChildren: './inventario/inventario.module#InventarioModule'
+
+}, {
+  path: '',
+  redirectTo: '/lista_1',
+  pathMatch: 'full'
 }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

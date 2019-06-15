@@ -3,6 +3,8 @@
     <button class="btn btn-outline-success" type="button" (click)="openModal(template)">Nuevo</button>
   </div>
 </nav>
+<router-outlet></router-outlet>
+
 <div class="row">
   <!--<div class="col-md-3" *ngFor="let articulo of articulos$ | async | filtros: 10">!-->
   <div class="col-md-3" *ngFor="let articulo of articulos">
@@ -52,4 +54,3 @@
     </div> <button class="btn btn-outline-success" type="button" (click)="guardar()">Guardar</button>
   </div>
 </ng-template>
-<router-outlet></router-outlet>
