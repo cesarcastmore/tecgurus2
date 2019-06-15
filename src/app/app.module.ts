@@ -13,7 +13,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { InformacionComponent } from './pages/lista/informacion/informacion.component';
 import { ContactosComponent } from './pages/lista/contactos/contactos.component';
-import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
+import { ArticuloComponent } from './pages/lista/articulo/articulo.component';
+import { LoginComponent } from './pages/login/login.component'
 
 
 @NgModule({
@@ -25,13 +26,15 @@ import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
     NavbarComponent,
     InformacionComponent,
     ContactosComponent,
-    ArticuloComponent  ],
+    ArticuloComponent,
+    LoginComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     ModalModule.forRoot(),
         ReactiveFormsModule
+
 
   ],
   providers: [AuthService],
