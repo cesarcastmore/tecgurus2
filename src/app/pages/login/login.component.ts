@@ -18,13 +18,24 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  public onLogin(){
-  	let user: any= this.userForm.value;
-  	if(user.username == 'cesar.cast.more@gmail.com' &&
-  		user.password == '123456'){
-  		this.router.navigate(['']);
+  public onLogin() {
+    let user: any = this.userForm.value;
+    if (user.username == 'cesar.cast.more@gmail.com' &&
+      user.password == '123456') {
 
-  	}
+      localStorage.setItem('user', JSON.stringify({
+        is_active: true
+      }))
+
+
+      this.router.navigate(['']);
+
+
+
+
+
+
+    }
   }
 
 }

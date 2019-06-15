@@ -3,6 +3,7 @@ import { Abarrotes } from './model/abarrotes';
 import { Articulo } from './model/articulo';
 import { Electronico } from './model/electronico';
 import { AuthService } from './shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,14 @@ export class AppComponent implements OnInit {
 
   articulo: Articulo;
 
-  constructor(private authService: AuthService){
+  constructor(private authService: AuthService,
+    private router: Router) {
 
+  }
+
+  public logOut(){
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 
   math: any = {
@@ -30,8 +37,26 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.authService.api_key= '23454etrdf45t5erdx';
-    
+    let user: any = JSON.parse(localStorage.getItem('user'));
+
+    console.log(user);
+
+    if (!user) {
+      this.router.navigate(['login']);
+
+    }
+
+    if (user.is_active) {
+      this.router.navigate(['']);
+    } else {
+      this.router.navigate(['login']);
+    }
+
+
+
+
+    this.authService.api_key = '23454etrdf45t5erdx';
+
     let items: any[] = [{
         nombre: 'cesar',
         id: 2,
@@ -75,12 +100,12 @@ export class AppComponent implements OnInit {
       return numero > 40;
     })
 
-    let tipo: string="abarratos";
+    let tipo: string = "abarratos";
 
-    if(tipo == "abarrotes"){
+    if (tipo == "abarrotes") {
       this.articulo = new Abarrotes(32, 'descripcion1', 'A', 'Titulo 1');
-    }else if(tipo == "electronico"){
-      this.articulo= new Electronico(32, 'descripcion12', 'E', 'Titulo 2');
+    } else if (tipo == "electronico") {
+      this.articulo = new Electronico(32, 'descripcion12', 'E', 'Titulo 2');
     }
 
     //console.log(this.articulo.calcularDescuento());
