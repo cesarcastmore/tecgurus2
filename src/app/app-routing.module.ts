@@ -5,13 +5,15 @@ import { Lista2Component } from './pages/lista2/lista2.component';
 import { InformacionComponent } from './pages/lista/informacion/informacion.component';
 import { ContactosComponent } from './pages/lista/contactos/contactos.component'
 import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
+import { PermisosGuard } from '../guards/permisos.guard';
 
 const routes: Routes = [{
   path: 'lista_1',
   component: ListaComponent,
   children: [{
     path: 'informacion',
-    component: InformacionComponent
+    component: InformacionComponent,
+
   }, {
     path: 'contactos',
     component: ContactosComponent
@@ -22,12 +24,11 @@ const routes: Routes = [{
   }],
 }, {
   path: 'lista_2',
-  component: Lista2Component
-
+  component: Lista2Component,
+  canActivate: [PermisosGuard],
 }, {
   path: 'inventario',
   loadChildren: './inventario/inventario.module#InventarioModule'
-
 }, {
   path: '',
   redirectTo: '/lista_1',

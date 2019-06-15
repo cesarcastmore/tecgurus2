@@ -15,6 +15,7 @@ import { InformacionComponent } from './pages/lista/informacion/informacion.comp
 import { ContactosComponent } from './pages/lista/contactos/contactos.component';
 import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
 
+
 @NgModule({
   declarations: [
     AppComponent,

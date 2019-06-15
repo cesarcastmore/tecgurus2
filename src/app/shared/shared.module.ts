@@ -9,13 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { MayusculasPipe } from './pipes/mayusculas.pipe';
 import { FiltrosPipe } from './pipes/filtros.pipe';
 import { ContentComponent } from './content/content.component';
+import { HttpClientModule}  from '@angular/common/http';
 
 @NgModule({
   declarations: [CardComponent, HeaderComponent, BodyComponent, FooterComponent, MayusculasPipe, FiltrosPipe, ContentComponent],
   imports: [
     CommonModule,
     AccordionModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   exports: [CardComponent, FiltrosPipe]
 })
