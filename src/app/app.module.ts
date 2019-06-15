@@ -10,7 +10,10 @@ import { Lista2Component } from './pages/lista2/lista2.component';
 import { NavbarComponent } from './pages/lista2/navbar/navbar.component';
 import {AuthService } from './shared/services/auth.service';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import {  ReactiveFormsModule } from '@angular/forms'
+import {  ReactiveFormsModule } from '@angular/forms';
+import { InformacionComponent } from './pages/lista/informacion/informacion.component';
+import { ContactosComponent } from './pages/lista/contactos/contactos.component';
+import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {  ReactiveFormsModule } from '@angular/forms'
     CardsComponent,
     ListaComponent,
     Lista2Component,
-    NavbarComponent  ],
+    NavbarComponent,
+    InformacionComponent,
+    ContactosComponent,
+    ArticuloComponent  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
