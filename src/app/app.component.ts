@@ -20,9 +20,14 @@ export class AppComponent implements OnInit {
 
   }
 
-  public logOut(){
+  public logOut() {
     localStorage.clear();
-    this.router.navigate(['login']);
+
+    this.authService.logout()
+      .then(res => {
+       // this.router.navigate(['login']);
+
+      })
   }
 
   math: any = {
@@ -37,11 +42,22 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.authService.user.subscribe(user => {
+
+      if (user) {
+        this.router.navigate(['']);
+
+      } else {
+
+
+      }
+    })
+
     let user: any = JSON.parse(localStorage.getItem('user'));
 
     console.log(user);
 
-    if (!user) {
+    /*if (!user) {
       this.router.navigate(['login']);
 
     }
@@ -50,7 +66,7 @@ export class AppComponent implements OnInit {
       this.router.navigate(['']);
     } else {
       this.router.navigate(['login']);
-    }
+    }*/
 
 
 

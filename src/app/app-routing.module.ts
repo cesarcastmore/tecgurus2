@@ -7,6 +7,7 @@ import { ContactosComponent } from './pages/lista/contactos/contactos.component'
 import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
 import { PermisosGuard } from '../guards/permisos.guard';
 import { LoginComponent } from './pages/login/login.component'
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [{
   path: 'lista_1',
@@ -37,6 +38,9 @@ const routes: Routes = [{
 }, {
   path: 'login',
   component: LoginComponent
+}, {
+  path: 'register',
+  component: RegisterComponent
 }];
 
 @NgModule({

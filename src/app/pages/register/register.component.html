@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 class="form-heading">Registro</h1>
+  <div class="login-form">
+    <div class="main-div">
+      <div class="alert alert-danger" role="alert" *ngIf="err">
+        {{err}}
+      </div>
+      <div class="panel">
+        <h2>Registrar usuario</h2>
+        <p>Escribe tu correo y contraseña</p>
+      </div>
+      <div id="Login" [formGroup]="userForm">
+        <div class="form-group">
+          <input type="email" class="form-control" id="inputEmail" placeholder="Correo" formControlName="email">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="inputPassword" placeholder="Nombre" formControlName="first_name">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" id="inputPassword" placeholder="Apellido Paterno" formControlName="last_name">
+        </div>
+        <button (click)="onRegister()" type="submit" class="btn btn-primary">Registrar</button>
+      </div>
+    </div>
+  </div>
+</div>
