@@ -10,15 +10,16 @@ import { MayusculasPipe } from './pipes/mayusculas.pipe';
 import { FiltrosPipe } from './pipes/filtros.pipe';
 import { ContentComponent } from './content/content.component';
 import { HttpClientModule}  from '@angular/common/http';
+import { Card2Component } from './card2/card2.component';
 
 @NgModule({
-  declarations: [CardComponent, HeaderComponent, BodyComponent, FooterComponent, MayusculasPipe, FiltrosPipe, ContentComponent],
+  declarations: [CardComponent, HeaderComponent, BodyComponent, FooterComponent, MayusculasPipe, FiltrosPipe, ContentComponent, Card2Component],
   imports: [
     CommonModule,
     AccordionModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  exports: [CardComponent, FiltrosPipe]
+  exports: [CardComponent, FiltrosPipe, Card2Component]
 })
 export class SharedModule {}

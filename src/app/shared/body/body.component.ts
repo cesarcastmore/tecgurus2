@@ -26,5 +26,31 @@ export class BodyComponent implements OnInit {
   }
 
 
+  public setPrecio(precio: number){
+    this.price= precio;
+  }
+
+
+  public getPrecio(): number{
+    return this.price;
+  }
+
+  public setCategoria(categoria: string){
+    this.categoria= categoria;
+  }
+
+
+  public getCategoria(): string{
+    return this.categoria;
+  }
+
+    public setDescripcion(descripcion: string){
+    this.description= descripcion;
+  }
+
+
+  public getDescripcion(): string{
+    return this.description;
+  }
 
 }

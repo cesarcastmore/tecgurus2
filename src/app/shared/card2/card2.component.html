@@ -1,0 +1,12 @@
+{{contadorPadre}}<div class="row">
+  <div class="card text-center" [ngClass]="{'border-red': contadorPadre > 20, 'border-blue': contadorPadre > 30,
+  'border-green': contadorPadre > 40  }  ">
+    <app-header></app-header>
+    <app-body></app-body>
+    <app-footer></app-footer>
+  <!--  <object *ngFor="let item of items">
+    	
+    </object>!-->
+    <!--<app-footer [(contador)]="contadorPadre"></app-footer>!-->
+  </div>
+</div>

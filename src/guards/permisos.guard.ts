@@ -9,6 +9,6 @@ export class PermisosGuard implements CanActivate {
 
   canActivate() {
     console.log("AlwaysAuthGuard");
-    return false;
+    return true;
   }
 }

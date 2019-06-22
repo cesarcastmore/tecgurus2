@@ -20,4 +20,12 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  public setTitulo(titulo: string){
+    this.title= titulo;
+  }
+
+  public getTitulo():string {
+    return this.title;
+  }
+
 }
