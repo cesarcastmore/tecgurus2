@@ -8,8 +8,10 @@ import { ArticuloComponent } from './pages/lista/articulo/articulo.component'
 import { PermisosGuard } from '../guards/permisos.guard';
 import { LoginComponent } from './pages/login/login.component'
 import { RegisterComponent } from './pages/register/register.component';
+import { CrudFirestoreComponent } from './pages/crud-firestore/crud-firestore.component';
 
-const routes: Routes = [{
+const routes: Routes = [
+  {
   path: 'lista_1',
   component: ListaComponent,
   children: [{
@@ -41,6 +43,9 @@ const routes: Routes = [{
 }, {
   path: 'register',
   component: RegisterComponent
+},{ 
+  path: 'crud-firestore',
+component: CrudFirestoreComponent
 }];
 
 @NgModule({

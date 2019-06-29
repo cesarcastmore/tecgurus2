@@ -35,10 +35,6 @@ export class RegisterComponent implements OnInit {
 
         console.log(res);
 
-
-
-
-
           this.firestore.collection("users").add({
               email: user.email,
               first_name: user.first_name,
@@ -46,7 +42,6 @@ export class RegisterComponent implements OnInit {
               id: res.user.uid
             })
             .then(res => {
-              console.log("ENTROOOOOOOO ");
               console.log(res);
             }).catch(err=>{
               console.log(err);

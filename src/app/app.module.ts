@@ -23,6 +23,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { RegisterComponent } from './pages/register/register.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { CrudFirestoreComponent } from './pages/crud-firestore/crud-firestore.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     ContactosComponent,
     ArticuloComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CrudFirestoreComponent
   ],
   imports: [
     BrowserModule,
