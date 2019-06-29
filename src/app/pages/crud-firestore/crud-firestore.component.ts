@@ -132,4 +132,22 @@ public articulos: Articulo[] = [];
 
   }
 
+  buscar(searchTerm: string){
+
+  	this.articulos$ = this.angularFirestore.collection('articulos',
+  		(ref: any) => { 
+
+  		
+
+  				ref.where('titulo', '==', searchTerm);
+
+  		return ref;
+  	}
+  		
+  		)
+  	.valueChanges();
+  
+
+  }
+
 }

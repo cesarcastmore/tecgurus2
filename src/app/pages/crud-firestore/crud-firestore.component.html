@@ -4,7 +4,10 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
-
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">Buscar</label>
+      <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark"  (change)="buscar($event.target.value)">
+    </div>
 <div class="row">
   <!--<div class="col-md-3" *ngFor="let articulo of articulos$ | async | filtros: 10">!-->
   <div class="col-md-3" *ngFor="let articulo of articulos$ | async">
@@ -23,7 +26,6 @@
     </button>
   </div>
   <div class="modal-body" [formGroup]="formArticulo">
-  	{{ formArticulo.value  | json }}
     <div class="alert alert-danger" role="alert" *ngIf="!formArticulo.valid">
       El formulario no es valido
     </div>

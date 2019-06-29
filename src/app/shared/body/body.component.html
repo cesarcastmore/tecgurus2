@@ -1,6 +1,6 @@
 <div class="card-body" [ngStyle]="{'background-color':'green'}" [style.color]="getColor('mexico')">
   <h5 class="card-title">{{ description}}</h5>
-  <p class="card-text">{{ price + 1 | number:'3.1-2' }}</p>
+  <p class="card-text">{{ price + 1 | number:'0.1-2' }}</p>
   <p *ngIf="price > 1000">
     Aplica meses sin intereses</p>
   <ng-container [ngSwitch]="categoria">
